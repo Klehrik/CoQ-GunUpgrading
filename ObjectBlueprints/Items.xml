@@ -1,0 +1,5 @@
+<objects>
+    <object Name="MissileWeapon" Load="Merge">
+        <part Name="Klehrik_GunUpgrade" />
+    </object>
+</objects>
