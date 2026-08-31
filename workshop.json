@@ -1,0 +1,8 @@
+{
+  "WorkshopId": 3793238194,
+  "Title": "Gun Upgrading",
+  "Description": "Allows for upgrading lower-tier guns to be (somewhat) on par with high-tier ones.\r\nThe lower the tier, the more times it can be upgraded.\r\n\r\n(The reason I made this is because I wanted to use a sniper rifle in the lategame.)\n\n[url=https://github.com/Klehrik/CoQ-GunUpgrading]GitHub[/url]",
+  "Tags": "Stable,Item,Weapon,Tinkering",
+  "Visibility": "0",
+  "ImagePath": "preview.png"
+}

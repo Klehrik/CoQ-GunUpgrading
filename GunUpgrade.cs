@@ -13,7 +13,6 @@ namespace XRL.World.Parts
         public int Level = 0;
         public int Bonus = 0;
 
-        private GetMissileWeaponPerformanceEvent cachedEvent;
         private int baseHighestBit = -1;
         private string[] plusTwoBanlist = { "Desert Rifle", "Ruin of House Isner" };
 
@@ -60,10 +59,8 @@ namespace XRL.World.Parts
 
         public override bool HandleEvent(GetMissileWeaponPerformanceEvent E)
         {
-            // Prevent applying multiple times (which happens for some reason)
-            if (Level > 0 && E != cachedEvent)
+            if (Level > 0 && E.Subject == ParentObject)
             {
-                cachedEvent = E;
                 E.PenetrationBonus += Bonus;
             }
             return base.HandleEvent(E);
