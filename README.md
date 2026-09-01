@@ -2,9 +2,7 @@
 
 # [Gun Upgrading](https://steamcommunity.com/sharedfiles/filedetails/?id=3793238194)
 
-Allows for upgrading lower-tier guns to be (somewhat) on par with high-tier ones.  
-The lower the tier, the more times it can be upgraded.
+Allows for upgrading lower-tier guns to be (somewhat) on par with high-tier ones and usable in the lategame.  
+The lower the tier, the more times it can be upgraded.  
 
-(The reason I made this is because I wanted to use a sniper rifle in the lategame.)
-
-Option does not appear for existing items created before adding this mod.
+Option does not appear for existing items created before adding this mod.  
