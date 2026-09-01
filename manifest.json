@@ -2,7 +2,7 @@
     "id": "Klehrik_GunUpgrading",
     "title": "Gun Upgrading",
     "description": "Allows for upgrading lower-tier guns to be (somewhat) on par with high-tier ones.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Klehrik",
     "tags": "Stable, Item, Weapon, Tinkering",
     "PreviewImage": "preview.png"

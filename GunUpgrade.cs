@@ -8,6 +8,7 @@ using XRL.UI;
 
 namespace XRL.World.Parts
 {
+    [Serializable]
     public class Klehrik_GunUpgrade : IPart
     {
         public int Level = 0;
@@ -131,13 +132,13 @@ namespace XRL.World.Parts
             var dmgNextValue = GetBonusDamage(Level + 1);
 
             var bitReq = GetRequiredBit();
-            var highest = bitReq.GetHighestTier();
-            if (highest <= 0)
+            var bitReqValue = bitReq.GetHighestTier();
+            if (bitReqValue <= 0)
             {
                 actor.Fail("Error: Failed to retrieve next required bit.");
                 return;
             }
-            var tinkerReq = GetRequiredTinker(highest);
+            var tinkerReq = GetRequiredTinker(bitReqValue);
 
             var hasBit = false;
             var hasTinker = false;
@@ -183,6 +184,20 @@ namespace XRL.World.Parts
             ParentObject.SplitStack(1, actor);
             bitLocker.UseBits(bitReq);
             Level += 1;
+
+            if (ParentObject.HasPart<Commerce>())
+            {
+                ParentObject.GetPart<Commerce>().Value += bitReqValue * 75;
+            }
+            if (ParentObject.HasPart<Examiner>())
+            {
+                var part = ParentObject.GetPart<Examiner>();
+                part.Complexity += 1;
+                if (bitReqValue >= 5)
+                {
+                    part.Difficulty += 1;
+                }
+            }
 
             SoundManager.PlayUISound("Sounds/Abilities/sfx_ability_tinkerModItem");
             var text2 = ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: true);
